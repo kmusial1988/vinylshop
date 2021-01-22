@@ -1,0 +1,6 @@
+vinylShop/dataBase/IVinylRepository.class
+vinylShop/model/Vinyl.class
+vinylShop/App.class
+vinylShop/configuration/AppConfiguration.class
+vinylShop/dataBase/impl/ListVinylRepositoryImpl.class
+vinylShop/controllers/CommonController.class
