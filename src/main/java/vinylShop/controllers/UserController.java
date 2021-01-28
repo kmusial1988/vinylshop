@@ -9,13 +9,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import vinylShop.dataBase.IUserRepository;
 import vinylShop.model.User;
+import vinylShop.session.SessionObject;
+
+import javax.annotation.Resource;
 
 @Controller
 public class UserController {
 
     @Autowired
     IUserRepository userRepository;
-    
+
+    @Resource
+    SessionObject sessionObject;
+
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginFrom(Model model){
@@ -31,6 +37,7 @@ public class UserController {
         boolean autResult = userRepository.authentication(user);
 
         if(autResult){
+            this.sessionObject.setLogged(true);
             return "redirect:/main";
         }else{
             return "redirect:/login";

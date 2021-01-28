@@ -5,6 +5,7 @@
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/dataBase/IVinylRepository.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/controllers/UserController.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/dataBase/impl/ListUserRepositoryImpl.java
+/home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/session/SessionObject.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/dataBase/IUserRepository.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/App.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/dataBase/impl/ListVinylRepositoryImpl.java

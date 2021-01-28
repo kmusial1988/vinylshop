@@ -5,6 +5,8 @@ vinylShop/controllers/UserController.class
 vinylShop/configuration/AppConfiguration.class
 vinylShop/controllers/CommonController.class
 vinylShop/dataBase/IUserRepository.class
+vinylShop/session/SessionObject.class
+vinylShop/model/Vinyl$Category.class
 vinylShop/App.class
 vinylShop/dataBase/impl/ListVinylRepositoryImpl.class
 vinylShop/dataBase/impl/ListUserRepositoryImpl.class

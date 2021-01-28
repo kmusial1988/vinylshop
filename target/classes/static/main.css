@@ -12,8 +12,9 @@ border-top: 5px solid gray;
 #menu a {
 text-decoration: none;
 color: black;
-font-size: 40px;
+font-size: 30px;
 transition : color 1s;
+margin: 5px 25px;
 
 }
 
@@ -44,4 +45,20 @@ display: inline-block;
 margin: 30px 50px 0 0;
 padding: 5px;
 font-size: 25px;
+}
+
+#filter-form {
+width: 500px;
+margin: auto;
+text-align: center;
+
+}
+#filter-form input[type=text] {
+font-size: 24px;
+text-align: center;
+}
+
+#filter-form input[type=submit] {
+font-size: 24px;
+text-align: center;
 }

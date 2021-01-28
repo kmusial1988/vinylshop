@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/login.css">
 </head>
 <body>
-<img src="/LogoLong.jpeg" alt="logo" id="logo">
+<div th:replace="template.html :: logo"></div>
 <form id="login-form" method="post" action="">
     <input type="text" placeholder="login"class="text-input" th:field="*{userModel.login}">
     <input type="password" placeholder="password" class="text-input" th:field="*{userModel.pass}">

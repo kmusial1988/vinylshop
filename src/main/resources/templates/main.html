@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-<img src="/LogoLong.jpeg" alt="logo" id="logo">
-
-<div id="menu">
-    <a href="/main">Strona główna</a>
+<div th:replace="template.html :: logo"></div>
+<div th:replace="template.html :: menu"></div>
+<div id="filter-form">
+    <form method="post" action="/filter">
+        <input type="text" placeholder="filtruj" name="filter">
+        <input type="submit" value="Filteruj">
+    </form>
 </div>
 <div id="content">
     <th:block th:each="vinyl : ${vinyls}">

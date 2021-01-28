@@ -7,15 +7,28 @@ public class Vinyl {
     private String isbn;
     private double price;
 
-    public Vinyl(String title, String author, int pieces, String isbn, double price) {
+    private Category category;
+
+    ;
+
+    public Vinyl(String title, String author, int pieces, String isbn, double price, Category category) {
         this.title = title;
         this.author = author;
         this.pieces = pieces;
         this.isbn = isbn;
         this.price = price;
+        this.category = category;
     }
 
     public Vinyl() {
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -56,6 +69,11 @@ public class Vinyl {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public enum Category {
+        lata90,
+        lata00
     }
 
 
