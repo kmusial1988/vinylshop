@@ -1,0 +1,11 @@
+#logo{
+height: 200px;
+display: block;
+margin: 30px auto;
+}
+
+#menu{
+text-align: center;
+border-top: 5px solid gray;
+
+}
