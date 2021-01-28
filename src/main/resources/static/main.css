@@ -9,3 +9,39 @@ text-align: center;
 border-top: 5px solid gray;
 
 }
+#menu a {
+text-decoration: none;
+color: black;
+font-size: 40px;
+transition : color 1s;
+
+}
+
+#menu a:hover{
+color: gray;
+}
+
+#content{
+margin: 15px 200px;
+}
+
+.vinyl{
+border: 2px solid gray;
+padding: 10px;
+margin: 10px;
+}
+
+.vinyl-title{
+font-size: 35px;
+}
+
+.vinyl-author{
+font-size: 30px;
+}
+
+.vinyl-info span{
+display: inline-block;
+margin: 30px 50px 0 0;
+padding: 5px;
+font-size: 25px;
+}

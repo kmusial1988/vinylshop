@@ -8,21 +8,23 @@
 <body>
 <img src="/LogoLong.jpeg" alt="logo" id="logo">
 
-    <div id="menu">
-        <a href="/main">strona główna</a>
-    </div>
+<div id="menu">
+    <a href="/main">Strona główna</a>
+</div>
+<div id="content">
+    <th:block th:each="vinyl : ${vinyls}">
 
-<th:block th:each="vinyl : ${vinyls}">
+        <div class="vinyl">
+            <p th:text="${vinyl.title}" class="vinyl-title"></p>
+            <p th:text="${vinyl.author}" class="vinyl-author"></p>
+            <div class="vinyl-info">
+                <span th:text="'Ilość: ' + ${vinyl.pieces}"></span>
+                <span th:text="'Isbn: ' + ${vinyl.isbn}"></span>
+                <span th:text="'Cena: ' + ${vinyl.price}"></span>
+            </div>
+        </div>
 
-    <div>
-        <p th:text="${vinyl.title}"></p>
-        <p th:text="${vinyl.author}"></p>
-        <p th:text="${vinyl.pieces}"></p>
-        <p th:text="${vinyl.isbn}"></p>
-        <p th:text="${vinyl.price}"></p>
-    </div>
-
-</th:block>
-
+    </th:block>
+</div>
 </body>
 </html>
