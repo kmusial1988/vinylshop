@@ -34,15 +34,26 @@ public class UserController {
 
         userRepository.authentication(user);
 
-        boolean autResult = userRepository.authentication(user);
+       this.sessionObject.setUser(this.userRepository.authentication(user));
 
-        if(autResult){
-            this.sessionObject.setLogged(true);
+        if(this.sessionObject.getUser() != null) {
             return "redirect:/main";
         }else{
             return "redirect:/login";
         }
 
+
+    }
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(){
+        this.sessionObject.setUser(null);
+        return "redirect:/login";
+    }
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public String edit(Model model){
+        model.addAttribute("user", this.sessionObject.getUser());
+
+        return "edit";
 
     }
 

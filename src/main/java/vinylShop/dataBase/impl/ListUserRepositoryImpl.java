@@ -13,20 +13,20 @@ public class ListUserRepositoryImpl implements IUserRepository {
     private final List<User> userList = new ArrayList<>();
 
     public ListUserRepositoryImpl() {
-        this.userList.add(new User("admin", "admin"));
+        this.userList.add(new User("kamil","kamil","admin", "admin"));
     }
 
     @Override
-    public boolean authentication(User user) {
+    public User authentication(User user) {
         for (User userFromDataBase : this.userList) {
             if (userFromDataBase.getLogin().equals(user.getLogin())) {
                 if (userFromDataBase.getPass().equals(user.getPass())) {
-                    return true;
+                    return userFromDataBase;
                 } else {
-                    return false;
+                    return null;
                 }
             }
         }
-        return false;
+        return null;
     }
 }
