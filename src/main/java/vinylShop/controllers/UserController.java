@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import vinylShop.dataBase.IUserRepository;
 import vinylShop.model.User;
 import vinylShop.model.view.ChangePassData;
@@ -28,6 +27,10 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginFrom(Model model) {
         model.addAttribute("userModel", new User());
+        String info = this.sessionObject.getInfo();
+        if(info != null){
+            model.addAttribute("info", info);
+        }
         return "login";
     }
 
@@ -41,6 +44,7 @@ public class UserController {
         if (this.sessionObject.getUser() != null) {
             return "redirect:/main";
         } else {
+            this.sessionObject.setInfo("Nieprawidłowe Dane !!!");
             return "redirect:/login";
         }
 
@@ -58,6 +62,11 @@ public class UserController {
         if (this.sessionObject.isLogged()) {
             model.addAttribute("user", this.sessionObject.getUser());
             model.addAttribute("passModel", new ChangePassData());
+            String info = this.sessionObject.getInfo();
+            if(info != null) {
+                model.addAttribute("info", info);
+                this.sessionObject.setInfo(null);
+            }
             return "edit";
         } else {
             return "redirect:/login";
@@ -73,12 +82,12 @@ public class UserController {
         return "redirect:/edit";
     }
 
-    @RequestMapping(value = "/chandePass", method = RequestMethod.POST)
-    public String changePass (@ModelAttribute ChangePassData changePassData) {
+    @RequestMapping(value = "/changePass", method = RequestMethod.POST)
+    public String changePass (@ModelAttribute ChangePassData changePassData, Model model) {
 
         if(!changePassData.getNewPass().equals(changePassData.getRepeatedNewPass())){
-
-            //TODO
+           this.sessionObject.setInfo("nieprawidłowo powtórzone hasło !!!");
+            return "redirect:/edit";
 
         }
         User user = new User();
@@ -89,7 +98,8 @@ public class UserController {
 
         if(authenticatedUser == null){
 
-            //TODO
+            this.sessionObject.setInfo("nieprawidłowe hasło !!!");
+            return "redirect:/edit";
         }
 
         user.setPass(changePassData.getNewPass());

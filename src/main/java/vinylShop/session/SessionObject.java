@@ -11,6 +11,7 @@ import java.util.List;
 @SessionScope
 public class SessionObject {
     private User user = null;
+    private String info = null;
 
     public boolean isLogged() {
         return !(this.user == null);
@@ -23,5 +24,15 @@ public class SessionObject {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getInfo() {
+        String result = this.info;
+        this.info = null;
+        return result;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }
