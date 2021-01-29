@@ -1,12 +1,13 @@
 vinylShop/dataBase/IVinylRepository.class
 vinylShop/model/Vinyl.class
-vinylShop/model/User.class
 vinylShop/controllers/UserController.class
-vinylShop/configuration/AppConfiguration.class
-vinylShop/controllers/CommonController.class
 vinylShop/dataBase/IUserRepository.class
 vinylShop/session/SessionObject.class
 vinylShop/model/Vinyl$Category.class
 vinylShop/App.class
+vinylShop/model/view/ChangePassData.class
 vinylShop/dataBase/impl/ListVinylRepositoryImpl.class
 vinylShop/dataBase/impl/ListUserRepositoryImpl.class
+vinylShop/model/User.class
+vinylShop/configuration/AppConfiguration.class
+vinylShop/controllers/CommonController.class
