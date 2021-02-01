@@ -4,6 +4,7 @@
 margin: 20px auto;
 width: 500px;
 padding: 0;
+text-align: center;
 }
 
 
@@ -40,4 +41,8 @@ font-size: 20px;
 color: green;
 text-align: center;
 
+}
+#register-link{
+font-size: 20px;
+color: gray;
 }

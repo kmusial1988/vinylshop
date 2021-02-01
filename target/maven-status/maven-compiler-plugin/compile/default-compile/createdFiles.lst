@@ -1,4 +1,5 @@
 vinylShop/dataBase/IVinylRepository.class
+vinylShop/model/view/UserRegistrationData.class
 vinylShop/model/Vinyl.class
 vinylShop/controllers/UserController.class
 vinylShop/dataBase/IUserRepository.class

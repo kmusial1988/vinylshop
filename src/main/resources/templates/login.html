@@ -8,13 +8,13 @@
 </head>
 <body>
 <div th:replace="template.html :: logo"></div>
-<form id="login-form" method="post" action="">
+<form id="login-form" method="post">
     <div th:if="${info !=null}" th:text ="${info}" id="info"></div>
     <input type="text" placeholder="login"class="text-input" th:field="*{userModel.login}">
     <input type="password" placeholder="password" class="text-input" th:field="*{userModel.pass}">
     <input type="submit" value="Zaloguj" id="form-submit">
+    <a href="/register" id="register-link">Zarejestruj</a>
 </form>
-
 
 </body>
 </html>
