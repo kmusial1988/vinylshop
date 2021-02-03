@@ -23,10 +23,12 @@
         <div class="vinyl">
             <p th:text="${vinyl.title}" class="vinyl-title"></p>
             <p th:text="${vinyl.author}" class="vinyl-author"></p>
-            <div class="vinyl-info">
+            <div class="vinyl-info" >
                 <span th:text="'Ilość: ' + ${vinyl.pieces}"></span>
                 <span th:text="'Isbn: ' + ${vinyl.isbn}"></span>
                 <span th:text="'Cena: ' + ${vinyl.price}"></span>
+                <a th:href="@{/addToBasket/{isbn}(isbn=${vinyl.isbn})} " class="buy"></a>
+                <a th:if="${user.role.name() == 'ADMIN' }" th:href="@{/editVinyl/{isbn}(isbn=${vinyl.isbn})} " class="edit"></a>
             </div>
         </div>
 

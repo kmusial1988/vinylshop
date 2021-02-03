@@ -3,16 +3,17 @@ function validate() {
     var pass = document.forms["loginForm"]["pass"].value;
 
 
-
+    var regex = new RegExp(/.{3}.*/);
     var flag = true;
+    
 
-    if(login == ""){
+    if(!regex.test(login)){
         document.forms["loginForm"]["login"].style.background = "#ffccff";
         flag = false;
     }else{
         document.forms["loginForm"]["login"].style.background = "white";
     }
-    if(pass == ""){
+    if(!regex.test(pass)){
         document.forms["loginForm"]["pass"].style.background = "#ffccff";
         flag = false;
     }else{

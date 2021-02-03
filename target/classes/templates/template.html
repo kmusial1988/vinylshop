@@ -11,10 +11,11 @@
     <a href="/main?category=lata00">Lata 00</a>
     <a href="/contact">Kontakt</a>
     <a href="/logout">Wyloguj</a>
-    <a href="/edit" th:text="${user.login}" ></a>
     <a href="/addProduct" th:if="${user.role.name() == 'ADMIN' }">Dodaj produkt</a>
+    <a href="/edit" th:text="${user.login}" ></a>
+    <a href="/basket">Koszyk</a>
 </div>
 
-<img src="/LogoLong.jpeg" alt="logo" id="logo" th:fragment="logo">
+<img src="/logoMusicStore.png" alt="logo" id="logo" th:fragment="logo">
 </body>
 </html>

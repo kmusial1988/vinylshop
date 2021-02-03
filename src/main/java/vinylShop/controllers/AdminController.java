@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import vinylShop.dataBase.IVinylRepository;
@@ -57,6 +58,26 @@ public class AdminController {
         }
         return "redirect:/addProduct";
 
+
+    }
+
+    @RequestMapping(value = "/editVinyl/{isbn}", method = RequestMethod.GET)
+    public  String editVinylPage(@PathVariable String isbn, Model model) {
+
+        Vinyl vinyl = this.vinylRepository.getVinylByISBN(isbn);
+        model.addAttribute("vinyl", vinyl);
+        model.addAttribute(this.sessionObject.getUser());
+
+        return "editVinyl";
+    }
+    @RequestMapping(value = "/editVinyl/{isbn}", method = RequestMethod.POST)
+    public  String editVinyl(@ModelAttribute Vinyl vinyl, @PathVariable String isbn) {
+
+        Vinyl vinylFromDB = this.vinylRepository.getVinylByISBN(isbn);
+        vinylFromDB.setPieces(vinyl.getPieces());
+        vinylFromDB.setPrice(vinyl.getPrice());
+
+        return "redirect:/main";
 
     }
 }

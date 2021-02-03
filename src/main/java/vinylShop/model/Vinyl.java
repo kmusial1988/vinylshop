@@ -76,5 +76,10 @@ public class Vinyl {
         lata00
     }
 
+    @Override
+    public Object clone()  {
+        return new Vinyl(this.title, this.author, this.pieces, this.isbn, this.price, this.category);
 
+
+    }
 }

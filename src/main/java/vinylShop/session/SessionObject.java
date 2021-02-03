@@ -5,6 +5,7 @@ import org.springframework.web.context.annotation.SessionScope;
 import vinylShop.model.User;
 import vinylShop.model.Vinyl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -13,6 +14,7 @@ public class SessionObject {
     private User user = null;
     private String info = null;
     private String filter = null;
+    private List<Vinyl> basket = new ArrayList<>();
 
     public boolean isLogged() {
         return !(this.user == null);
@@ -43,6 +45,14 @@ public class SessionObject {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public List<Vinyl> getBasket() {
+        return basket;
+    }
+
+    public void setBasket(List<Vinyl> basket) {
+        this.basket = basket;
     }
 }
 
