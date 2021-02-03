@@ -7,11 +7,12 @@
 <body>
 <div id="menu" th:fragment="menu">
     <a href="/main">Strona główna</a>
-    <a href="/lata90">Lata 90 </a>
-    <a href="/lata00">Lata 00</a>
+    <a href="/main?category=lata90">Lata 90 </a>
+    <a href="/main?category=lata00">Lata 00</a>
     <a href="/contact">Kontakt</a>
     <a href="/logout">Wyloguj</a>
-    <a href="/edit" th:text="${user.name}" ></a>
+    <a href="/edit" th:text="${user.login}" ></a>
+    <a href="/addProduct" th:if="${user.role.name() == 'ADMIN' }">Dodaj produkt</a>
 </div>
 
 <img src="/LogoLong.jpeg" alt="logo" id="logo" th:fragment="logo">

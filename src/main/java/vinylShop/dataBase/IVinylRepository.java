@@ -8,6 +8,7 @@ public interface IVinylRepository {
     List<Vinyl> getAllVinyl();
     List<Vinyl> getAllVinyl90();
     List<Vinyl> getAllVinyl00();
-    List<Vinyl> getVinylByFilter(String filter);
+    Vinyl getVinylByISBN (String isbn);
+    void addnyl(Vinyl vinyl);
 
 }

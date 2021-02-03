@@ -54,15 +54,20 @@ public class ListVinylRepositoryImpl implements IVinylRepository {
     }
 
     @Override
-    public List<Vinyl> getVinylByFilter(String filter) {
-        List<Vinyl> filteredVinyls = new ArrayList<>();
+    public Vinyl getVinylByISBN(String isbn) {
 
-        for (Vinyl vinyl : this.vinyl) {
-            if (vinyl.getTitle().toUpperCase().contains(filter.toUpperCase()) ||
-                    vinyl.getAuthor().toUpperCase().contains(filter.toUpperCase())) {
-                filteredVinyls.add(vinyl);
+        for(Vinyl vinyl : this.vinyl) {
+            if (vinyl.getIsbn().equals(isbn)) {
+                return vinyl;
             }
         }
-        return filteredVinyls;
+        return null;
     }
+
+    @Override
+    public void addnyl(Vinyl vinyl) {
+        this.vinyl.add(vinyl);
+    }
+
+
 }

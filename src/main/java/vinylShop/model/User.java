@@ -1,20 +1,24 @@
 package vinylShop.model;
 
+import javax.management.relation.Role;
+
 public class User {
 
     private String name;
     private String surname;
     private String login;
     private String pass;
+    private Role role;
 
     public User() {
     }
 
-    public User(String name, String surname, String login, String pass) {
+    public User(String name, String surname, String login, String pass, Role role) {
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.pass = pass;
+        this.role = role;
     }
 
     public String getLogin() {
@@ -47,5 +51,19 @@ public class User {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public enum Role {
+
+        USER,
+        ADMIN
     }
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Płyty Vinylowe</title>
+    <link rel="stylesheet" href="/add-product.css">
+
+    <link rel="stylesheet" href="/register.css">
+
+    <link rel="stylesheet" href="/common-controls.css">
+</head>
+<body>
+<div th:replace="template.html :: logo"></div>
+<div th:replace="template.html :: menu"></div>
+
+<form method="post" id="register-form">
+    <div th:if="${info !=null}" th:text ="${info}" id="info"></div>
+    <input type="text" placeholder="Tytuł" class="text-input" th:field="${vinyl.title}">
+    <input type="text" placeholder="Autor" class="text-input" th:field="${vinyl.author}">
+    <input type="text" placeholder="Ilość" class="text-input" th:field="${vinyl.pieces}">
+    <input type="text" placeholder="ISBN" class="text-input" th:field="${vinyl.isbn}">
+    <input type="text" placeholder="Cena" class="text-input" th:field="${vinyl.price}">
+    <select th:field="${vinyl.category}">
+        <option value="lata90">lata90</option>
+        <option value="lata00">lata00</option>
+    </select>
+
+    <input type="submit" value="OK" id="form-submit" >
+
+</form>
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 package vinylShop.controllers;
 
-import com.sun.xml.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +13,8 @@ import vinylShop.model.view.UserRegistrationData;
 import vinylShop.session.SessionObject;
 
 import javax.annotation.Resource;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @Controller
@@ -26,6 +27,8 @@ public class UserController {
     SessionObject sessionObject;
 
 
+
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginFrom(Model model) {
         model.addAttribute("userModel", new User());
@@ -36,7 +39,14 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String authentication(@ModelAttribute User user) {
 
-        userRepository.authentication(user);
+        Pattern regexPattern = Pattern.compile(".{3}.*");
+        Matcher loginMatcher = regexPattern.matcher(user.getLogin());
+        Matcher passMatcher = regexPattern.matcher(user.getPass());
+
+        if (!loginMatcher.matches() || !passMatcher.matches()) {
+            this.sessionObject.setInfo("Nieprawidłowe Dane !!!");
+            return "redirect:/login";
+        }
 
         this.sessionObject.setUser(this.userRepository.authentication(user));
 
@@ -133,7 +143,8 @@ public class UserController {
         User user = new User(userRegistrationData.getName(),
                 userRegistrationData.getSurname(),
                 userRegistrationData.getLogin(),
-                userRegistrationData.getPass());
+                userRegistrationData.getPass(),
+                User.Role.USER);
 
         this.userRepository.addUser(user);
         this.sessionObject.setInfo("rejestracja Udana !!");
