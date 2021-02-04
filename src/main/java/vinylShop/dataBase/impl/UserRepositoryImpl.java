@@ -8,7 +8,7 @@ import vinylShop.model.User;
 
 import java.sql.Connection;
 
-@Component
+
 public class UserRepositoryImpl implements IUserRepository {
 
     @Autowired

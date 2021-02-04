@@ -7,7 +7,7 @@ import vinylShop.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class ListUserRepositoryImpl implements IUserRepository {
 
     private final List<User> userList = new ArrayList<>();

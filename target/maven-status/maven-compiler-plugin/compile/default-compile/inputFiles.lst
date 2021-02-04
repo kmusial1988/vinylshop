@@ -9,6 +9,7 @@
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/dataBase/impl/ListVinylRepositoryImpl.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/utils/filterUtils.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/controllers/CommonController.java
+/home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/dataBase/impl/UserRepositoryImpl.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/controllers/AdminController.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/model/view/UserRegistrationData.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/vinylShop/src/main/java/vinylShop/controllers/BasketController.java

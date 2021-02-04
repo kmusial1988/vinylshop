@@ -15,4 +15,5 @@ vinylShop/model/User$Role.class
 vinylShop/model/User.class
 vinylShop/configuration/AppConfiguration.class
 vinylShop/controllers/CommonController.class
+vinylShop/dataBase/impl/UserRepositoryImpl.class
 vinylShop/controllers/BasketController.class
